@@ -16,13 +16,13 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  likedPostsId.plus(id);
+  likedPostsId.push(id);
   showPosts(posts);
 };
 
 const reportPost = (id) => {
   reportedPostsId.push(id);
-  const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id)); //!
+  const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
 };
 
@@ -135,7 +135,7 @@ const showPosts = (posts) => {
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
 
-  posts.forEach((post) => {
+  posts.forEach((post) => {                                                                //////////
     const div = createPost(post);
     productsContainer.appendChild(div);
   });
