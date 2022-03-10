@@ -51,7 +51,6 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log(post);
   const image = post.image;
   const div = document.createElement("article");
   div.classList.add("post");
@@ -135,17 +134,20 @@ const showPosts = (posts) => {
   const productsContainer = document.getElementById("posts");
   productsContainer.innerHTML = "";
 
-  posts.forEach((post) => {                                                               
+  posts.forEach((post) => {
     const div = createPost(post);
     productsContainer.appendChild(div);
   });
 };
 
 const displayLikedPosts = () => {
+
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
-    document.getElementById("liked").appendChild(div);
+    const likedPostDiv = document.getElementById("liked");
+    likedPostDiv.innerHTML = ``; /////////////////////Problem is here////////////
+    likedPostDiv.appendChild(div);
   });
 };
 
