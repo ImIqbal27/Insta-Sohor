@@ -81,30 +81,30 @@
         <p>Answer: The Event Loop is the system that JavaScript uses in the browser to handle the execution of multiple
             pieces of code. It consists of the Call Stack, Web APIs, and the Callback Queue. It is responsible for
             giving JavaScript its asynchronous programming ability.
-            JavaScript is a single-threaded, asynchronous language with a concurrency model that is based on a “run to
-            completion” event loop.
+            JavaScript is a single-threaded, asynchronous language with a concurrency model that is based on a `run to
+            completion` event loop. <br>
 
-            Single-Threaded: When we say that JavaScript is a single-threaded language, this means that it can only
-            “process” one command at a time, from top to bottom.
+            <b>Single-Threaded:</b> JavaScript is a single-threaded language, that means  it can
+            only
+            'process' one command at a time, from top to bottom. <br>
 
-            Asynchronous: how can JavaScript be asynchronous and single-threaded? technically the browser
+            <b> Asynchronous:</b> The browser
             and its Web APIs are what give JavaScript its asynchronous powers; the language by itself actually doesnt
-            have this capability.
+            have this capability. <br>
 
-            Call Stack: This is the stack where the code is executed one step
-            at a time. JavaScript functions are added (push()) and removed (pop()) to the stack in a LIFO order.
-            There is only one Call Stack in JavaScript, this is what makes it single-threaded. A
-            multi-threaded language like Java can have many stacks running code at the same time. It is important to
-            understand that the page being rendered in the browser will not be interactive until the Call Stack has
-            finished running all of the synchronous JavaScript.
+            <b> Call Stack:</b> This is the stack where the code is executed one step
+            at a time. JavaScript functions are added to the stack in a LIFO order.
+            There is only one Call Stack in JS, that makes it single-threaded. <br>
 
-            Web APIs: These asynchronous calls are provided by the browser to give additional functionality to the
-            JavaScript engine. After a Web API is pushed onto the Call Stack, it is then sent to a separate Web API
-            container and once an action is triggered the callback function is added to the Callback Queue.
+            <b>Web APIs:</b> These asynchronous calls are provided by the browser to give additional functionality to
+            the
+            JS engine. After a Web API is pushed onto the Call Stack, it is then sent to a separate Web API
+            container and once an action is triggered the callback function is added to the Callback Queue. <br>
 
-            Callback Queue: This is a queue data structure that adds the callback functions from the Web APIs in a FIFO
+            <b>Callback Queue:</b> This is a queue data structure that adds the callback functions from the Web APIs in
+            a FIFO
             order. After the Call Stack is through running all of the synchronous JavaScript, the
-            Callback Queue is dequeued onto the Call Stack one function at a time and then executed.
+            Callback Queue is dequeued onto the Call Stack one function at a time and then executed. <br>
 
         </p>
 
