@@ -17,7 +17,8 @@ const isLiked = (id) => {
 
 const addToLiked = (id) => {
   likedPostsId.push(id);
-  showPosts(posts);
+  const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
+  showPosts(remainingPosts);
 };
 
 const reportPost = (id) => {
@@ -39,6 +40,8 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
+    document.getElementById('liked').innerHTML = "";
+    document.getElementById('question-section').innerHTML = "";
 
     displayLikedPosts();
   } else {
@@ -144,10 +147,10 @@ const displayLikedPosts = () => {
 
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
+    console.log(post);
     const div = createPost(post);
-    const likedPostDiv = document.getElementById("liked");
-    likedPostDiv.innerHTML = ``; /////////////////////Problem is here////////////
-    likedPostDiv.appendChild(div);
+    document.getElementById("liked").appendChild(div);
+
   });
 };
 
@@ -156,6 +159,7 @@ const displayReportedPosts = () => {
   reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
+
   });
 };
 
