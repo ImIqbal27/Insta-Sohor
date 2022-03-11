@@ -59,13 +59,87 @@
     </main>
 
     <hr>
-    <section class="container"  id="question-section">
-        <h2>How does Javascript work ?</h2>
-        <p>Answer: </p>
-        <h2>What does Javascript event loop do ?</h2>
-        <p>Answer: </p>
-        <h2>Difference between local storage and session storage ?</h2>
-        <p>Answer: </p>
+    <section class="container" id="question-section">
+        <h2>Q<sub>1</sub> : How does Javascript work ?</h2>
+        <p>Answer: JavaScript is a Client-side Scripting Language.This programming language runs inside an browser .
+            After loading the page, the browser has a built-in interpreter that reads the JavaScript code if it in the
+            page and execute it.Front end developer / designers use JavaScript in many different ways. JavaScript’s
+            syntax is heavily inspired by C++ and Java. JavaScript is an interpreted language which means the JavaScript
+            engine(V8) converts the Js code line by line and runs in the same manner instead of converting the whole
+            program once. <br>
+            Javascript execution in V8 is divided into three(3) stages: <br>
+
+            #1 : Source To Syntax Tree <br>
+
+            #2 : Syntax Tree To Bytecode <br>
+
+            #3 : Bytecode To Machine Code</p> <br>
+
+
+        <h2>Q<sub>2</sub>: What does Javascript event loop do ?</h2>
+
+        <p>Answer: The Event Loop is the system that JavaScript uses in the browser to handle the execution of multiple
+            pieces of code. It consists of the Call Stack, Web APIs, and the Callback Queue. It is responsible for
+            giving JavaScript its asynchronous programming ability.
+            JavaScript is a single-threaded, asynchronous language with a concurrency model that is based on a “run to
+            completion” event loop.
+
+            Single-Threaded: When we say that JavaScript is a single-threaded language, this means that it can only
+            “process” one command at a time, from top to bottom.
+
+            Asynchronous: how can JavaScript be asynchronous and single-threaded? technically the browser
+            and its Web APIs are what give JavaScript its asynchronous powers; the language by itself actually doesnt
+            have this capability.
+
+            Call Stack: This is the stack where the code is executed one step
+            at a time. JavaScript functions are added (push()) and removed (pop()) to the stack in a LIFO order.
+            There is only one Call Stack in JavaScript, this is what makes it single-threaded. A
+            multi-threaded language like Java can have many stacks running code at the same time. It is important to
+            understand that the page being rendered in the browser will not be interactive until the Call Stack has
+            finished running all of the synchronous JavaScript.
+
+            Web APIs: These asynchronous calls are provided by the browser to give additional functionality to the
+            JavaScript engine. After a Web API is pushed onto the Call Stack, it is then sent to a separate Web API
+            container and once an action is triggered the callback function is added to the Callback Queue.
+
+            Callback Queue: This is a queue data structure that adds the callback functions from the Web APIs in a FIFO
+            order. After the Call Stack is through running all of the synchronous JavaScript, the
+            Callback Queue is dequeued onto the Call Stack one function at a time and then executed.
+
+        </p>
+
+
+
+
+
+
+        <h2>Q<sub>3</sub> : Difference between Local storage and Session storage ?</h2>
+        <p>Answer: Local Storage and Session Storage are more similar than different. Most modern browsers should
+            support Local Storage and Session Storage features. They are used to store data in the browser. They are
+            accessible from the client-side only . Also since they are a
+            front-end tool, they have no SSL support.Each browser has a different specifications on how much data can be
+            stored inside Local and Session Storage.</p>
+
+        <h4>Local Storage</h4>
+        <ul>
+            <li>Expire never</li>
+            <li>Client side only</li>
+            <li>Accessible from any Window</li>
+            <li>No SSL(Secure Sockets Layer) support</li>
+            <li>Data are not transferred on each HTTP request</li>
+            <li>5 mb limit</li>
+        </ul>
+        <h4>Session Storage</h4>
+        <ul>
+            <li>Expire on tab close </li>
+            <li>Client side only</li>
+            <li>Accessible from same tab</li>
+            <li>No SSL(Secure Sockets Layer) support</li>
+            <li>Data are not transferred on each HTTP request</li>
+            <li>5/10 mb limit</li>
+        </ul>
+
+
     </section>
 
     <footer></footer>
